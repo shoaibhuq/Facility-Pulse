@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4273B4A12AB6498400067075 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4273B4A02AB6498400067075 /* DashboardView.swift */; };
 		897CC2AB2AB636A500F61D61 /* Facility_PulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CC2AA2AB636A500F61D61 /* Facility_PulseApp.swift */; };
 		897CC2AD2AB636A500F61D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CC2AC2AB636A500F61D61 /* ContentView.swift */; };
 		897CC2AF2AB636A700F61D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897CC2AE2AB636A700F61D61 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4273B4A02AB6498400067075 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		897CC2A72AB636A500F61D61 /* Facility Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facility Pulse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		897CC2AA2AB636A500F61D61 /* Facility_PulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility_PulseApp.swift; sourceTree = "<group>"; };
 		897CC2AC2AB636A500F61D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				897CC2AA2AB636A500F61D61 /* Facility_PulseApp.swift */,
+				4273B4A02AB6498400067075 /* DashboardView.swift */,
 				897CC2AC2AB636A500F61D61 /* ContentView.swift */,
 				897CC2AE2AB636A700F61D61 /* Assets.xcassets */,
 				897CC2B02AB636A700F61D61 /* Preview Content */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				897CC2AD2AB636A500F61D61 /* ContentView.swift in Sources */,
+				4273B4A12AB6498400067075 /* DashboardView.swift in Sources */,
 				897CC2AB2AB636A500F61D61 /* Facility_PulseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +279,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +309,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
