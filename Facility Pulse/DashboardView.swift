@@ -63,7 +63,7 @@ struct SummaryView: View {
             
         }
         .onChange(of: selection) { _ in
-            assetVM.assets = AssetManager.readJson(forName: "assets")!
+            assetVM.assets = AssetManager.readJson(forName: "assets")!.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate})
         }
         .alert("Do you want to place work order for all critcal alert?",
                isPresented: $showRedAlert) {
