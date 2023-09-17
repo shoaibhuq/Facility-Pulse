@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct SearchView: View {
-    
     @State private var searchText = ""
     @State private var selectedFilter = "All"
 
-    var assets: [Asset] = AssetManager.assets
+    var assets: [Asset] 
     
     var filteredAssets: [Asset] {
         if searchText.isEmpty && selectedFilter == "All" {
@@ -28,7 +27,7 @@ struct SearchView: View {
         } else {
             return assets.filter { asset in
                 asset.assetType == selectedFilter &&
-                asset.assetType.localizedCaseInsensitiveContains(searchText)
+                asset.assetName.localizedCaseInsensitiveContains(searchText)
             }
         }
     }
@@ -56,7 +55,7 @@ struct SearchView: View {
                 }
                 
                 List(filteredAssets) { asset in
-                    NavigationLink(destination: AssetDetail(asset: asset)) {
+                    NavigationLink(destination: AssetDetailView(asset: asset)) {
                         AssetCell(asset: asset)
                     }
                 }
@@ -67,22 +66,8 @@ struct SearchView: View {
     }
 }
 
-struct AssetDetail: View {
-    let asset: Asset
-    
-    var body: some View {
-        // You can create a detailed view for each asset here if needed
-        // For now, let's just display the asset's ID
-        Text("Asset ID: \(asset.assetID)")
-            .navigationBarTitle("Asset Detail")
-    }
-}
-
 struct AssetCell: View {
     let asset: Asset
-    //CHANGE LATER
-    let expectedFailureDate: Date = Date.now.addingTimeInterval(1000000)
-    
     
     var body: some View {
         ZStack {
@@ -118,7 +103,7 @@ struct AssetCell: View {
                 
                 /// DATE EXPECTED TO FAIL
                 Text(RelativeDateTimeFormatter()
-                    .localizedString(for: expectedFailureDate,
+                    .localizedString(for: asset.expectedFailureDate,
                                      relativeTo: .now)
                 )
                 
@@ -131,8 +116,8 @@ struct AssetCell: View {
     }
     
     var dangerColor: Color {
-        let days = expectedFailureDate.timeIntervalSince(.now) / 86400
-        if days < 6 {
+        let days = asset.expectedFailureDate.timeIntervalSince(.now) / 86400
+        if days < 5 {
             return .red
         } else if days < 15 {
             return .yellow
@@ -142,11 +127,3 @@ struct AssetCell: View {
     }
 }
 
-
-
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}

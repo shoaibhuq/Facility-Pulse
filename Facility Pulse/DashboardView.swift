@@ -10,21 +10,30 @@ import SwiftUI
 struct DashboardView: View {
     @ObservedObject var assetVM = AssetViewModel()
     var body: some View {
-        ScrollView {
-            VStack {
-                SummaryView(redCount: assetVM.countRed,
-                            yellowCount: assetVM.countYellow,
-                            greenCount: assetVM.countGreen)
-                CriticalItemsView()
+        NavigationView {
+            ScrollView {
+                VStack {
+                    SummaryView(assetVM: assetVM,
+                                redCount: assetVM.countRed,
+                                yellowCount: assetVM.countYellow,
+                                greenCount: assetVM.countGreen)
+                    CriticalItemsView(assets: assetVM.assets)
+                }
             }
+            .navigationTitle("Dashboard")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }
 
 struct SummaryView: View {
+    @ObservedObject var assetVM: AssetViewModel
     var redCount: Int
     var yellowCount: Int
     var greenCount: Int
+    
+    @State private var showRedAlert: Bool = false
+    @State private var showYellowAlert: Bool = false
     var body: some View {
         VStack {
             PieChartView(slices: [
@@ -34,7 +43,11 @@ struct SummaryView: View {
             ])
             
             HStack {
-                redSum
+                Button {
+                    showRedAlert.toggle()
+                } label: {
+                    redSum
+                }
                 
                 VStack(spacing: 8) {
                     yellowSum
@@ -46,6 +59,13 @@ struct SummaryView: View {
             .padding()
             
             
+        }
+        .alert("Do you want to place work order for all critcal alert?",
+               isPresented: $showRedAlert) {
+            Button("OK", role: .destructive) {
+                assetVM.placeRedOrder()
+            }
+            Button("Cancel", role: .cancel) { }
         }
         .padding()
     }
@@ -149,8 +169,7 @@ struct PieChartView: View {
 }
 
 struct CriticalItemsView: View {
-    let assets: [Asset] = Array(AssetManager.assets
-        .sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
+    let assets: [Asset] 
     var body: some View {
         VStack {
             ForEach(assets) { asset in

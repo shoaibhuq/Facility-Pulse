@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var assetVM = AssetViewModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            DashboardView(assetVM: assetVM)
+                .badge(assetVM.countRed)
+                .tabItem {
+                    Label("Dashboard", systemImage: "list.bullet.clipboard.fill")
+                }
+            SearchView(assets: assetVM.assets)
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
         }
-        .padding()
     }
 }
 

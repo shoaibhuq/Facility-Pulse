@@ -11,7 +11,7 @@ import SwiftUI
 struct Facility_PulseApp: App {
     var body: some Scene {
         WindowGroup {
-            SearchView()
+            ContentView()
         }
     }
 }

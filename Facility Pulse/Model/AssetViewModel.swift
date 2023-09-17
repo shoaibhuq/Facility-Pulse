@@ -8,7 +8,7 @@
 import Foundation
 
 class AssetViewModel: ObservableObject {
-    @Published var assets = AssetManager.assets
+    @Published var assets: [Asset] = Array(AssetManager.assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
     
     func isRed(_ asset: Asset) -> Bool {
         return asset.expectedFailureDate.timeIntervalSince(.now) / 86400 < 5
@@ -42,6 +42,7 @@ class AssetViewModel: ObservableObject {
             }
             return newAsset
         }
+        assets = Array(AssetManager.assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
     }
     
     func placeYellowOrder() {
@@ -52,5 +53,6 @@ class AssetViewModel: ObservableObject {
             }
             return newAsset
         }
+        assets = Array(AssetManager.assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
     }
 }
