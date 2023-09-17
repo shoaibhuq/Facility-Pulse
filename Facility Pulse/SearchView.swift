@@ -11,15 +11,8 @@ struct SearchView: View {
     
     @State private var searchText = ""
     @State private var selectedFilter = "All"
-    
-    let assetManager: AssetManager
 
-    var assets: [Asset]
-    
-    init() {
-        assetManager = AssetManager()
-        assets = assetManager.readJson(forName: "assets")!
-    }
+    var assets: [Asset] = AssetManager.assets
     
     var filteredAssets: [Asset] {
         if searchText.isEmpty && selectedFilter == "All" {
