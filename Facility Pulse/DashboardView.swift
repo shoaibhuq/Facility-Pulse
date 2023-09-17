@@ -62,6 +62,9 @@ struct SummaryView: View {
             
             
         }
+        .onChange(of: selection) { _ in
+            assetVM.assets = AssetManager.readJson(forName: "assets")!
+        }
         .alert("Do you want to place work order for all critcal alert?",
                isPresented: $showRedAlert) {
             Button("OK", role: .destructive) {
@@ -185,11 +188,14 @@ struct CriticalItemsView: View {
     var body: some View {
         VStack {
             ForEach(assets) { asset in
-                CriticalItemCardView(
-                    assetName: asset.assetName,
-                    location: asset.location,
-                    expectedFailureDate: asset.expectedFailureDate
-                )
+                NavigationLink(destination: AssetDetailView(asset: asset)) {
+                    CriticalItemCardView(
+                        assetName: asset.assetName,
+                        location: asset.location,
+                        expectedFailureDate: asset.expectedFailureDate
+                    )
+                }
+                .buttonStyle(.plain)
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
