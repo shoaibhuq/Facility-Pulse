@@ -12,6 +12,10 @@
 		897CC2AD2AB636A500F61D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CC2AC2AB636A500F61D61 /* ContentView.swift */; };
 		897CC2AF2AB636A700F61D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897CC2AE2AB636A700F61D61 /* Assets.xcassets */; };
 		897CC2B22AB636A700F61D61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897CC2B12AB636A700F61D61 /* Preview Assets.xcassets */; };
+		89FD4B992AB65B26002B2E89 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B982AB65B26002B2E89 /* Asset.swift */; };
+		89FD4B9B2AB65D7A002B2E89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B9A2AB65D7A002B2E89 /* SearchView.swift */; };
+		89FD4B9D2AB662E2002B2E89 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B9C2AB662E2002B2E89 /* AssetManager.swift */; };
+		89FD4BA12AB681A1002B2E89 /* assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 89FD4BA02AB681A1002B2E89 /* assets.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		897CC2AC2AB636A500F61D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		897CC2AE2AB636A700F61D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		897CC2B12AB636A700F61D61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		89FD4B982AB65B26002B2E89 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		89FD4B9A2AB65D7A002B2E89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		89FD4B9C2AB662E2002B2E89 /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		89FD4BA02AB681A1002B2E89 /* assets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = assets.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +61,12 @@
 		897CC2A92AB636A500F61D61 /* Facility Pulse */ = {
 			isa = PBXGroup;
 			children = (
+				89FD4B972AB65B13002B2E89 /* Model */,
+				89FD4B9C2AB662E2002B2E89 /* AssetManager.swift */,
 				897CC2AA2AB636A500F61D61 /* Facility_PulseApp.swift */,
 				4273B4A02AB6498400067075 /* DashboardView.swift */,
+				89FD4B9A2AB65D7A002B2E89 /* SearchView.swift */,
+				89FD4BA02AB681A1002B2E89 /* assets.json */,
 				897CC2AC2AB636A500F61D61 /* ContentView.swift */,
 				897CC2AE2AB636A700F61D61 /* Assets.xcassets */,
 				897CC2B02AB636A700F61D61 /* Preview Content */,
@@ -68,6 +80,14 @@
 				897CC2B12AB636A700F61D61 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89FD4B972AB65B13002B2E89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89FD4B982AB65B26002B2E89 /* Asset.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FD4BA12AB681A1002B2E89 /* assets.json in Resources */,
 				897CC2B22AB636A700F61D61 /* Preview Assets.xcassets in Resources */,
 				897CC2AF2AB636A700F61D61 /* Assets.xcassets in Resources */,
 			);
@@ -140,8 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FD4B9B2AB65D7A002B2E89 /* SearchView.swift in Sources */,
 				897CC2AD2AB636A500F61D61 /* ContentView.swift in Sources */,
 				4273B4A12AB6498400067075 /* DashboardView.swift in Sources */,
+				89FD4B992AB65B26002B2E89 /* Asset.swift in Sources */,
+				89FD4B9D2AB662E2002B2E89 /* AssetManager.swift in Sources */,
 				897CC2AB2AB636A500F61D61 /* Facility_PulseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
