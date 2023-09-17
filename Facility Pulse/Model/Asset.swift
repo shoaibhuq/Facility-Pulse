@@ -36,6 +36,14 @@ struct Asset: Identifiable, Codable {
         case fall = "Fall"
         case spring = "Spring"
     }
+    
+    var assetName: String {
+        "\(self.assetType)-\(self.assetID)"
+    }
+    
+    var location: String {
+        "Room \(self.floor).\(self.room)"
+    }
 
 }
 

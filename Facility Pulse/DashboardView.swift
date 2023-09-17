@@ -21,12 +21,9 @@ struct CriticalItemsView: View {
     var body: some View {
         VStack(spacing: 0) {
             List(assets) { asset in
-                let name = "\(asset.assetType).\(asset.assetID)"
-                let location = "\(asset.floor).\(asset.room)"
-                
                 CriticalItemCardView(
-                    assetName: name,
-                    location: location,
+                    assetName: asset.assetName,
+                    location: asset.location,
                     expectedFailureDate: expectedFailureDate()
                 )
                 .listRowSeparator(.hidden)
