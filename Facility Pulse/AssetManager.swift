@@ -8,8 +8,8 @@
 import Foundation
 
 struct AssetManager {
-    
-    func readJson(forName fileName: String) -> [Asset]? {
+    static var assets = readJson(forName: "assets")!
+    static func readJson(forName fileName: String) -> [Asset]? {
         do {
             if let bundlePath = Bundle.main.path(forResource: fileName,
                                                  ofType: "json"),

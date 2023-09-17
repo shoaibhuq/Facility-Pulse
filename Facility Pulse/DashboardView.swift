@@ -9,29 +9,48 @@ import SwiftUI
 
 struct DashboardView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Text("YOO")
             CriticalItemsView()
-                .frame(maxHeight: .infinity, alignment: .top)
         }
     }
 }
 
 struct CriticalItemsView: View {
+    let assets: [Asset] = Array(AssetManager.assets[...3])
     var body: some View {
-        VStack {
-            CriticalItemCardView()
+        VStack(spacing: 0) {
+            List(assets) { asset in
+                let name = "\(asset.assetType).\(asset.assetID)"
+                let location = "\(asset.floor).\(asset.room)"
+                
+                CriticalItemCardView(
+                    assetName: name,
+                    location: location,
+                    expectedFailureDate: expectedFailureDate()
+                )
+                .listRowSeparator(.hidden)
+                
+            }
+            .listStyle(.plain)
         }
+        .frame(maxHeight: .infinity, alignment: .top)
+//        .frame(maxWidth: .infinity, alignment: .center)
+    }
+    
+    func expectedFailureDate() -> Date {
+        let timeToAdd: Int = .random(in: 200000...2000000)
+        return Date.now.addingTimeInterval(Double(timeToAdd))
     }
 }
 
 struct CriticalItemCardView: View {
-    let assetName: String = "AC01"
-    let location: String = "Building A.120"
+    let assetName: String
+    let location: String
     var expectedFailureDate: Date = Date.now.addingTimeInterval(500000)
     var body: some View {
         ZStack {
-            Color.init(red: 69/256, green: 69/256, blue: 69/256)
+            Color.darkGray
                 .clipShape(RoundedRectangle(cornerRadius: 20))
             
             HStack {
@@ -52,10 +71,13 @@ struct CriticalItemCardView: View {
                 VStack(alignment: .leading) {
                     Text(assetName)
                         .font(.title2.bold())
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
                     Text(location)
                         .font(.footnote)
                 }
-                .frame(alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.trailing, 8)
                 
                 
                 /// DATE EXPECTED TO FAIL
@@ -63,15 +85,13 @@ struct CriticalItemCardView: View {
                     .localizedString(for: expectedFailureDate,
                                      relativeTo: .now)
                 )
-                .frame(maxWidth: .infinity, alignment: .trailing)
                 
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 16)
         }
-//        .frame(maxWidth: .infinity, alignment: .leading)
         .frame(height: 72)
-        .padding(.horizontal, 12)
+//        .padding(.horizontal, 12)
     }
     
     var dangerColor: Color {
