@@ -38,13 +38,17 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
+    let redCount: Int = 12
+    let yellowCount: Int = 47
+    let greenCount: Int = 141
 }
 
 struct FacilityWidgetEntryView : View {
-    var entry: Provider.Entry
-
+    var entry: SimpleEntry
     var body: some View {
-        Text(entry.date, style: .time)
+        WidgetSummaryView(redCount: entry.redCount,
+                          yellowCount: entry.yellowCount,
+                          greenCount: entry.greenCount)
     }
 }
 

@@ -19,13 +19,21 @@
 		42CA4D252AB7668A00F8F230 /* FacilityWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 42CA4D212AB7668800F8F230 /* FacilityWidget.intentdefinition */; };
 		42CA4D262AB7668A00F8F230 /* FacilityWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 42CA4D212AB7668800F8F230 /* FacilityWidget.intentdefinition */; };
 		42CA4D292AB7668A00F8F230 /* FacilityWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 42CA4D162AB7668800F8F230 /* FacilityWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42CA4D2F2AB76EF600F8F230 /* WidgetSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA4D2E2AB76EF600F8F230 /* WidgetSummaryView.swift */; };
+		42CA4D302AB76F4D00F8F230 /* WidgetSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA4D2E2AB76EF600F8F230 /* WidgetSummaryView.swift */; };
+		42CA4D312AB76F6A00F8F230 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B982AB65B26002B2E89 /* Asset.swift */; };
+		42CA4D322AB76F6A00F8F230 /* AssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA4D0C2AB7598100F8F230 /* AssetViewModel.swift */; };
+		42CA4D332AB76F6D00F8F230 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B9C2AB662E2002B2E89 /* AssetManager.swift */; };
+		42CA4D342AB76F6D00F8F230 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B9C2AB662E2002B2E89 /* AssetManager.swift */; };
+		42CA4D352AB76F7900F8F230 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA4D0A2AB6AE8E00F8F230 /* Color+.swift */; };
+		42CA4D362AB7702400F8F230 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4273B4A02AB6498400067075 /* DashboardView.swift */; };
+		42CA4D372AB7733600F8F230 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897CC2AE2AB636A700F61D61 /* Assets.xcassets */; };
 		897CC2AB2AB636A500F61D61 /* Facility_PulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CC2AA2AB636A500F61D61 /* Facility_PulseApp.swift */; };
 		897CC2AD2AB636A500F61D61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CC2AC2AB636A500F61D61 /* ContentView.swift */; };
 		897CC2AF2AB636A700F61D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897CC2AE2AB636A700F61D61 /* Assets.xcassets */; };
 		897CC2B22AB636A700F61D61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897CC2B12AB636A700F61D61 /* Preview Assets.xcassets */; };
 		89FD4B992AB65B26002B2E89 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B982AB65B26002B2E89 /* Asset.swift */; };
 		89FD4B9B2AB65D7A002B2E89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B9A2AB65D7A002B2E89 /* SearchView.swift */; };
-		89FD4B9D2AB662E2002B2E89 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD4B9C2AB662E2002B2E89 /* AssetManager.swift */; };
 		89FD4BA12AB681A1002B2E89 /* assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 89FD4BA02AB681A1002B2E89 /* assets.json */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +74,7 @@
 		42CA4D212AB7668800F8F230 /* FacilityWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = FacilityWidget.intentdefinition; sourceTree = "<group>"; };
 		42CA4D222AB7668A00F8F230 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42CA4D242AB7668A00F8F230 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42CA4D2E2AB76EF600F8F230 /* WidgetSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSummaryView.swift; sourceTree = "<group>"; };
 		897CC2A72AB636A500F61D61 /* Facility Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facility Pulse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		897CC2AA2AB636A500F61D61 /* Facility_PulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility_PulseApp.swift; sourceTree = "<group>"; };
 		897CC2AC2AB636A500F61D61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +120,7 @@
 			children = (
 				42CA4D1D2AB7668800F8F230 /* FacilityWidgetBundle.swift */,
 				42CA4D1F2AB7668800F8F230 /* FacilityWidget.swift */,
+				42CA4D2E2AB76EF600F8F230 /* WidgetSummaryView.swift */,
 				42CA4D212AB7668800F8F230 /* FacilityWidget.intentdefinition */,
 				42CA4D222AB7668A00F8F230 /* Assets.xcassets */,
 				42CA4D242AB7668A00F8F230 /* Info.plist */,
@@ -253,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CA4D372AB7733600F8F230 /* Assets.xcassets in Resources */,
 				42CA4D232AB7668A00F8F230 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +286,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				42CA4D202AB7668800F8F230 /* FacilityWidget.swift in Sources */,
+				42CA4D352AB76F7900F8F230 /* Color+.swift in Sources */,
 				42CA4D252AB7668A00F8F230 /* FacilityWidget.intentdefinition in Sources */,
+				42CA4D312AB76F6A00F8F230 /* Asset.swift in Sources */,
+				42CA4D362AB7702400F8F230 /* DashboardView.swift in Sources */,
+				42CA4D322AB76F6A00F8F230 /* AssetViewModel.swift in Sources */,
 				42CA4D1E2AB7668800F8F230 /* FacilityWidgetBundle.swift in Sources */,
+				42CA4D302AB76F4D00F8F230 /* WidgetSummaryView.swift in Sources */,
+				42CA4D332AB76F6D00F8F230 /* AssetManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +308,10 @@
 				4273B4A12AB6498400067075 /* DashboardView.swift in Sources */,
 				42CA4D262AB7668A00F8F230 /* FacilityWidget.intentdefinition in Sources */,
 				89FD4B992AB65B26002B2E89 /* Asset.swift in Sources */,
-				89FD4B9D2AB662E2002B2E89 /* AssetManager.swift in Sources */,
 				897CC2AB2AB636A500F61D61 /* Facility_PulseApp.swift in Sources */,
 				42CA4D112AB7658200F8F230 /* AssetDetailView.swift in Sources */,
+				42CA4D2F2AB76EF600F8F230 /* WidgetSummaryView.swift in Sources */,
+				42CA4D342AB76F6D00F8F230 /* AssetManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +333,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6F3A58SWMP;
+				DEVELOPMENT_TEAM = T76274KP97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FacilityWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FacilityWidget;
@@ -343,7 +361,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6F3A58SWMP;
+				DEVELOPMENT_TEAM = T76274KP97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FacilityWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FacilityWidget;
@@ -487,7 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Facility Pulse/Preview Content\"";
-				DEVELOPMENT_TEAM = 6F3A58SWMP;
+				DEVELOPMENT_TEAM = T76274KP97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -501,7 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ShoaibHuq.Facility-Pulse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.khang.nguyen.trd.Facility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -518,7 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Facility Pulse/Preview Content\"";
-				DEVELOPMENT_TEAM = 6F3A58SWMP;
+				DEVELOPMENT_TEAM = T76274KP97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -532,7 +550,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ShoaibHuq.Facility-Pulse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.khang.nguyen.trd.Facility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
