@@ -19,7 +19,7 @@ struct SearchView: View {
             return assets
         } else if selectedFilter == "All" {
             return assets.filter { asset in
-                asset.assetType.localizedCaseInsensitiveContains(searchText)
+                asset.assetName.localizedCaseInsensitiveContains(searchText)
             }
         } else if searchText.isEmpty {
             return assets.filter { asset in
@@ -28,7 +28,7 @@ struct SearchView: View {
         } else {
             return assets.filter { asset in
                 asset.assetType == selectedFilter &&
-                asset.assetType.localizedCaseInsensitiveContains(searchText)
+                asset.assetName.localizedCaseInsensitiveContains(searchText)
             }
         }
     }
@@ -38,11 +38,11 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Search by Asset Type", text: $searchText)
+                    TextField("Search by Asset Name/ID", text: $searchText)
                         .padding()
                     
                     Picker("Filter by Asset Type", selection: $selectedFilter) {
-                        Text("Filter").tag("All")
+                        Text("All").tag("All")
                         ForEach(Array(Set(assets.map { $0.assetType })).sorted(), id: \.self) { assetType in
                             if assetType == "Plumbing System" {
                                 Text("Plumbing").tag(assetType)
