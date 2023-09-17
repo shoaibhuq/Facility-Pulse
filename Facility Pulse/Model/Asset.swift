@@ -22,6 +22,9 @@ struct Asset: Identifiable, Codable {
     let fall: Int
     let spring: Int
     
+    var expectedFailureDate: Date = Date.now.addingTimeInterval(Double.random(in: 200000...4000000))
+    var workOrderPlaced: Bool = false
+    
     enum CodingKeys: String, CodingKey {
         case assetID = "Asset ID"
         case assetType = "Asset Type"

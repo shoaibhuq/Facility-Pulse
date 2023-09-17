@@ -8,34 +8,29 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @ObservedObject var assetVM = AssetViewModel()
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack {
-                    SummaryView(redCount: 4, yellowCount: 6, greenCount: 12)
-//                        .frame(height: 220)
-                    CriticalItemsView()
-                }
+        ScrollView {
+            VStack {
+                SummaryView(redCount: assetVM.countRed,
+                            yellowCount: assetVM.countYellow,
+                            greenCount: assetVM.countGreen)
+                CriticalItemsView()
             }
-            
         }
-        .toolbar {
-            EditButton()
-        }
-        
     }
 }
 
 struct SummaryView: View {
-    var redCount: Double
-    var yellowCount: Double
-    var greenCount: Double
+    var redCount: Int
+    var yellowCount: Int
+    var greenCount: Int
     var body: some View {
         VStack {
             PieChartView(slices: [
-                (redCount, .redChart),
-                (yellowCount, .yellowChart),
-                (greenCount, .greenChart)
+                (Double(redCount), .redChart),
+                (Double(yellowCount), .yellowChart),
+                (Double(greenCount), .greenChart)
             ])
             
             HStack {
@@ -82,7 +77,7 @@ struct SummaryView: View {
             .foregroundColor(.greenChart)
             .overlay {
                 HStack {
-                    Image(systemName: "exclamationmark.triangle.fill")
+                    Image(systemName: "checkmark.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(6)
@@ -154,26 +149,21 @@ struct PieChartView: View {
 }
 
 struct CriticalItemsView: View {
-    let assets: [Asset] = Array(AssetManager.assets[...7])
+    let assets: [Asset] = Array(AssetManager.assets
+        .sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
     var body: some View {
         VStack {
             ForEach(assets) { asset in
                 CriticalItemCardView(
                     assetName: asset.assetName,
                     location: asset.location,
-                    expectedFailureDate: expectedFailureDate()
+                    expectedFailureDate: asset.expectedFailureDate
                 )
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
             .frame(maxHeight: .infinity, alignment: .top)
-            //        .frame(maxWidth: .infinity, alignment: .center)
         }
-    }
-    
-    func expectedFailureDate() -> Date {
-        let timeToAdd: Int = .random(in: 200000...2000000)
-        return Date.now.addingTimeInterval(Double(timeToAdd))
     }
 }
 
@@ -230,7 +220,7 @@ struct CriticalItemCardView: View {
     
     var dangerColor: Color {
         let days = expectedFailureDate.timeIntervalSince(.now) / 86400
-        if days < 6 {
+        if days < 5 {
             return .red
         } else if days < 15 {
             return .yellow
