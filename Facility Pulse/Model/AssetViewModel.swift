@@ -42,7 +42,7 @@ class AssetViewModel: ObservableObject {
             }
             return newAsset
         }
-        assets = Array(AssetManager.assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
+        assets = assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate})
     }
     
     func placeYellowOrder() {
@@ -53,6 +53,6 @@ class AssetViewModel: ObservableObject {
             }
             return newAsset
         }
-        assets = Array(AssetManager.assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate}))
+        assets = assets.sorted(by: {$0.expectedFailureDate < $1.expectedFailureDate})
     }
 }

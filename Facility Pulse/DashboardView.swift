@@ -31,6 +31,8 @@ struct SummaryView: View {
     var redCount: Int
     var yellowCount: Int
     var greenCount: Int
+    let list = ["Building A", "Building B"]
+    @State private var selection = "Building A"
     
     @State private var showRedAlert: Bool = false
     @State private var showYellowAlert: Bool = false
@@ -67,6 +69,16 @@ struct SummaryView: View {
             }
             Button("Cancel", role: .cancel) { }
         }
+               .toolbar {
+                   ToolbarItem(placement: .navigationBarTrailing) {
+                       Picker("Building", selection: $selection) {
+                           ForEach(list, id:\.self) {
+                               Text($0)
+                           }
+                       }
+                       .pickerStyle(.menu)
+                   }
+               }
         .padding()
     }
     
